@@ -1,0 +1,10 @@
+fake_news_detector/
+├── data/fake_or_real_news.csv       # Dataset
+├── train_model.py                   # Model training script
+├── predict.py                       # CLI prediction
+├── app.py                           # Streamlit app
+├── fake_news_model.pkl              # Saved model
+├── tfidf_vectorizer.pkl             # Saved TF-IDF vectorizer
+├── requirements.txt
+├── README.md
+└── .gitignore
