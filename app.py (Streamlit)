@@ -1,0 +1,14 @@
+import streamlit as st
+import pickle
+
+model = pickle.load(open("fake_news_model.pkl", "rb"))
+tfidf = pickle.load(open("tfidf_vectorizer.pkl", "rb"))
+
+st.title("📰 Fake News Detector")
+user_input = st.text_area("Paste your news article or headline here:")
+
+if st.button("Predict"):
+    if user_input:
+        vec = tfidf.transform([user_input])
+        result = model.predict(vec)
+        st.subheader(f"🧠 Prediction: **{result[0]}**")
